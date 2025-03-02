@@ -22,22 +22,22 @@ in
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # disable if switching to grub
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   #! Enable grub below, note you will have to change to the new bios boot option for settings to apply
-  # boot = {
-  #   loader = {
-  #     efi = {
-  #       canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
   #       efiSysMountPoint = "/boot/efi";
-  #     };
-  #     grub = {
-  #       enable = true;
-  #       devices = [ "nodev" ];
-  #       efiSupport = true;
-  #       useOSProber = true;
-  #     };
-  #   };
-  # };
+      };
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+      };
+    };
+  };
 
   hardware.bluetooth = {
     enable = true;
